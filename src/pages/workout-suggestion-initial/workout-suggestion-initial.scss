@@ -1,0 +1,36 @@
+page-workout-suggestion-initial {
+    *{
+        font-weight: normal;
+    }
+    ion-card {
+        position: relative;
+        text-align: center;
+        border-radius: 10px!important;
+    }
+    .card-header-box{
+        background-color: #ff9735;
+        border-radius: 2px!important;
+    }
+    .card-header-box p{
+        color: #fff;
+    }
+    .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    }
+    .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+    }
+    .checkOut{
+        position: absolute;
+        top: 70%;
+    }
+}

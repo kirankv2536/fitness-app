@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <form [formGroup]="signUpFormData">
+            <ion-item class="inputFields">
+                <ion-input type="text" formControlName="fullName" placeholder="Name" [(ngModel)]="fullName"></ion-input>
+            </ion-item>
+            <!-- <ion-item no-lines *ngIf="( loginFormData.get('fullName').hasError('minlength') || loginFormData.get('fullName').hasError('maxlength') ||loginFormData.get('fullName').hasError('required') ) && loginFormData.get('fullName').touched">
+                <div class="error" *ngIf="loginFormData.get('fullName').hasError('required') && loginFormData.get('fullName').touched">
+                    Please input your Name
+                </div>
+            </ion-item> -->
+            <ion-item class="inputFields">
+                <ion-input type="text" formControlName="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <!-- <ion-item no-lines *ngIf="( loginFormData.get('email').hasError('minlength') || loginFormData.get('email').hasError('pattern') ||loginFormData.get('email').hasError('required') ) && loginFormData.get('email').touched">
+                <div class="error" *ngIf="loginFormData.get('email').hasError('required') && loginFormData.get('email').touched">
+                    Please input your email
+                </div>
+                <div class="error" *ngIf="loginFormData.get('email').hasError('pattern') && loginFormData.get('email').touched">
+                    Email address invalid
+                </div>
+            </ion-item> -->
+            <ion-item class="inputFields inputFieldsLast">
+                <ion-input type="{{type}}" formControlName="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+                <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="eye"></ion-icon></button>
+                <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="eye-off"></ion-icon></button>
+            </ion-item>
+            <!-- <ion-item no-lines *ngIf="( loginFormData.get('password').hasError('minlength') || loginFormData.get('password').hasError('maxlength') ||loginFormData.get('password').hasError('required') ) && loginFormData.get('password').touched">
+                <div class="error" *ngIf="loginFormData.get('password').hasError('required') && loginFormData.get('password').touched">
+                    Please input your password
+                </div>
+                <div class="error" *ngIf="loginFormData.get('password').hasError('minlength') && loginFormData.get('password').touched">
+                    Minimum 6 characters
+                </div>
+                <div class="error" *ngIf="loginFormData.get('password').hasError('maxlength') && loginFormData.get('password').touched">
+                    Maximum 12 characters
+                </div>
+            </ion-item> -->
+        </form>
+    </ion-list>
+    <ion-grid class="gridPadding">
+        <button ion-button block outline (click)="showData()">Create an Account</button>
+    </ion-grid>
+    <ion-grid text-center>
+        <ion-list>
+            <div class="signUpLink">Oh wait, I have an account. <a color="dark" (click)="login()">Sign In</a></div>
+        </ion-list>
+    </ion-grid>
+    <ion-grid text-center class="gridPadding">
+        <ion-list>
+            <p class="PolicyLink">By Signing up you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a></p>
+        </ion-list>
+    </ion-grid>
+</ion-content>

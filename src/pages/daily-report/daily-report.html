@@ -1,0 +1,22 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Daily Report</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content class="background">
+    <ion-card>
+        <ion-card-header>
+            Workout Status
+        </ion-card-header>
+        <ion-card-content>
+                <div class="progress-wrapper">
+                    <div class="current" [ngStyle]="getOverlayStyle()">{{status}}</div>
+                    <round-progress [current]="current" [max]="max" [stroke]="stroke" [radius]="radius" [semicircle]="semicircle" [rounded]="rounded"
+                    [responsive]="responsive" [clockwise]="clockwise" [color]="gradient ? 'url(#gradient)' : color" [background]="background"
+                    [duration]="duration" [animation]="animation" [animationDelay]="animationDelay"></round-progress>
+                </div>        
+        </ion-card-content>
+    </ion-card>
+</ion-content>

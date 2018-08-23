@@ -1,0 +1,36 @@
+page-signup {
+    *{
+        font-weight: normal;
+    }
+    .gridPadding{
+        padding: 5px 20px;
+    }
+    .gridPadding button{
+        text-transform: none!important;
+        background-color: #ff9735;
+        border-color: #ff9735;
+        color: white;
+    }
+    .inputFields{
+        padding-left: 0px;
+    }
+    .inputFields input {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .inputFieldsLast {
+        border-bottom: none!important;
+    }
+    .forgotPasswordLink{
+        margin: 15px 20px;
+    }
+    .forgotPasswordLink a{
+        color: #ff9735;
+    }
+    .signUpLink, .PolicyLink{
+        color: #858585;
+    }
+    .signUpLink a, .PolicyLink a{
+        color: #000;
+    }
+}

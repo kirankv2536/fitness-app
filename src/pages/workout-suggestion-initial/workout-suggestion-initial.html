@@ -1,0 +1,29 @@
+<ion-header>
+    
+    <ion-navbar>
+        <ion-title>Workout Suggestions</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content class="card-background-page">
+    <ion-card class="card-header-box" color="dark">
+        <ion-card-content>
+            <p>We have workout suggestion for you according to your Body Mass Index (BMI)</p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card (click)="openModerateActivity()">
+        <img src="../../assets/imgs/moderate.jpeg"/>
+        <div class="card-title">Moderate</div>
+        <div class="card-subtitle">Workout</div>  
+    </ion-card>
+    <ion-card>
+        <img src="../../assets/imgs/vigorous.jpg"/>
+        <div class="card-title">Vigorous</div>
+        <div class="card-subtitle">Workout</div>
+    </ion-card>
+    <ion-card>
+        <img src="../../assets/imgs/combination.jpg"/>
+        <div class="card-title">Combination</div>
+        <div class="card-subtitle">Workout</div>
+    </ion-card>
+</ion-content>

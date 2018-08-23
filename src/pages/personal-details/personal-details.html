@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Personal Details</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">
+                Gender
+              </ion-label>
+              <ion-select>
+                <ion-option>
+                  Male
+                </ion-option>
+                <ion-option>
+                  Female
+                </ion-option>
+                <ion-option>
+                  Others
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">Date Of Birth</ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="birthdate"></ion-datetime>
+            </ion-item>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">Height (inches)</ion-label>
+              <ion-select (ionChange)='selectHeight($event)'>
+                <ion-option *ngFor="let height of heights" value="{{ height }}">
+                  {{ height }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">Weight (in lbs)</ion-label>
+              <ion-select (ionChange)='selectWeight($event)'>
+                <ion-option *ngFor="let weight of weights" value="{{ weight }}">
+                  {{ weight }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">
+                Origin
+              </ion-label>
+              <ion-select (ionChange)='selectOrigin($event)'>
+                <ion-option *ngFor="let origin of origins" value="{{ origin }}">
+                  {{ origin }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="inputFields inputFieldsLast" *ngIf="isOriginOthers">
+              <ion-input type="text" placeholder="Origin (Any others specify here)"></ion-input>
+            </ion-item>
+            <ion-item class="inputFields">
+              <ion-label class="optionLabels">
+                Type of work
+              </ion-label>
+              <ion-select>
+                <ion-option *ngFor="let workType of workTypes">
+                  {{ workType }}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="inputFields">
+                <ion-label class="optionLabels">
+                  Existing Medical Conditions
+                </ion-label>
+                <ion-select (ionChange)='selectMedical($event)'>
+                  <ion-option *ngFor=" let medicalCondition of medicalConditions" value="{{ medicalCondition }}">
+                    {{ medicalCondition }}
+                  </ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item class="inputFields inputFieldsLast" *ngIf="isMedicalOthers">
+              <ion-input type="text" placeholder="Medical Conditions (others specify here)"></ion-input>
+            </ion-item>
+    </ion-list>
+    <ion-grid class="gridPadding">
+        <button ion-button block outline (click)="computeBMI(birthdate)">Submit</button>
+    </ion-grid>
+</ion-content>
